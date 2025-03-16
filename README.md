@@ -1,59 +1,54 @@
-# DiabetesControlRiesgos
+# Diabetes: Control de riesgos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+![Angular](https://img.shields.io/badge/Angular-v19-red)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5-lightblue)
 
-## Development server
+**Diabetes: Control de Riesgos mediante una Plataforma Inteligente de Monitorización y Predicción de Complicaciones con Inteligencia Artificial** o **Diabetes: Control de riesgos** es una aplicación web diseñada para el seguimiento y monitoreo de pacientes con diabetes, con el objetivo de predecir complicaciones derivadas de la enfermedad utilizando algoritmos de inteligencia artificial.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Características principales
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Seguimiento de pacientes**: Registro y visualización de datos de pacientes, como niveles de glucosa, actividad física y medicamentos.
+- **Monitoreo en tiempo real**: Gráficos y alertas para el monitoreo continuo de la salud del paciente.
+- **Predicción de complicaciones**: Integración de modelos de inteligencia artificial para predecir riesgos y complicaciones derivadas de la diabetes.
+- **Interfaz moderna y responsiva**: Diseño atractivo y fácil de usar, desarrollado con Tailwind CSS.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Cómo configurar y ejecutar el proyecto
 
-```bash
-ng generate component component-name
-```
+### Requisitos previos
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js (v18 o superior)
+- Angular CLI (v19 o superior)
+- npm (v9 o superior)
 
-```bash
-ng generate --help
-```
+### Pasos para configurar el proyecto
 
-## Building
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/chrisdev-ts/diabetes-control-riesgos-web.git
+   cd diabetes-control-riesgos
+   ```
 
-To build the project run:
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Ejecuta el servidor de desarrollo:
+   ```bash
+   ng serve
+   ```
 
-```bash
-ng build
-```
+4. Abre tu navegador y visita:
+   ```
+   http://localhost:4200
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Licencia
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto está bajo la licencia **MIT**. Para más detalles, consulta el archivo [LICENSE](LICENSE).

@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+@theme {
+    --font-display: "Poppins", "sans-serif";
+    --color-primary: #CB4A4A;
+    --color-accent: #E8E8E8;
+}

@@ -1,8 +1,8 @@
 <div class="flex-1 overflow-y-auto">
     <!-- Sección de métricas -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         <!-- Tarjeta 1: Pacientes activos -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-gray-500 dark:text-gray-400">Pacientes activos</p>
@@ -13,7 +13,7 @@
         </div>
 
         <!-- Tarjeta 2: Nivel de glucosa promedio -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-gray-500 dark:text-gray-400">Glucosa promedio</p>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Tarjeta 3: Predicciones realizadas -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-gray-500 dark:text-gray-400">Predicciones</p>
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Tarjeta 4: Alertas recientes -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-gray-500 dark:text-gray-400">Alertas</p>
@@ -47,9 +47,9 @@
     </div>
 
     <!-- Gráficos y tablas -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <!-- Gráfico de glucosa -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
             <h3 class="text-xl font-semibold dark:text-white">Niveles de glucosa</h3>
             <div class="mt-4">
                 <!-- Aquí iría un gráfico (puedes usar Chart.js o cualquier otra librería) -->
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Tabla de pacientes recientes -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
             <h3 class="text-xl font-semibold dark:text-white">Pacientes recientes</h3>
             <div class="mt-4">
                 <table class="w-full text-left dark:text-white">
@@ -104,7 +104,7 @@
     </div>
 
     <!-- Sección de Actividad reciente -->
-    <div class="bg-gray-50 dark:bg-gray-800 mb-2 p-6 rounded-lg shadow-sm">
+    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Actividad reciente</h3>
         <div class="space-y-4">
             <!-- Evento 1 -->
@@ -113,7 +113,8 @@
                     <i class="fas fa-bell text-yellow-500 text-xl"></i>
                 </div>
                 <div>
-                    <p class="text-gray-700 dark:text-gray-300">Nueva alerta generada para <span class="font-semibold">Juan Pérez</span>.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Nueva alerta generada para <span
+                            class="font-semibold">Juan Pérez</span>.</p>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Hace 5 minutos</p>
                 </div>
             </div>
@@ -124,7 +125,8 @@
                     <i class="fas fa-chart-line text-purple-500 text-xl"></i>
                 </div>
                 <div>
-                    <p class="text-gray-700 dark:text-gray-300">Predicción realizada para <span class="font-semibold">María Gómez</span>.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Predicción realizada para <span
+                            class="font-semibold">María Gómez</span>.</p>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Hace 15 minutos</p>
                 </div>
             </div>
@@ -135,7 +137,8 @@
                     <i class="fas fa-tint text-green-500 text-xl"></i>
                 </div>
                 <div>
-                    <p class="text-gray-700 dark:text-gray-300">Nivel de glucosa actualizado para <span class="font-semibold">Carlos López</span>.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Nivel de glucosa actualizado para <span
+                            class="font-semibold">Carlos López</span>.</p>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Hace 30 minutos</p>
                 </div>
             </div>
@@ -146,7 +149,8 @@
                     <i class="fas fa-user-plus text-blue-500 text-xl"></i>
                 </div>
                 <div>
-                    <p class="text-gray-700 dark:text-gray-300">Nuevo paciente registrado: <span class="font-semibold">Ana Martínez</span>.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Nuevo paciente registrado: <span
+                            class="font-semibold">Ana Martínez</span>.</p>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Hace 1 hora</p>
                 </div>
             </div>

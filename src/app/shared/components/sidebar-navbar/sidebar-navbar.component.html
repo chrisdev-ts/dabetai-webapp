@@ -13,7 +13,7 @@
                         alt="Logo de la aplicación" />
                 </a>
 
-                <!-- Barra de búsqueda convertida en icono de lupa en dispositivos pequeños -->
+                <!-- Barra de búsqueda -->
                 <div class="relative hidden md:block lg:w-96">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <i class="fas fa-search text-gray-500 dark:text-gray-400"></i>
@@ -21,19 +21,12 @@
                     <input type="text" placeholder="Buscar..."
                         class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                        
+
                     </div>
                 </div>
             </div>
 
             <div class="flex items-center space-x-4">
-                <!-- <button type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 md:px-4 md:py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Mejorar plan
-                </button> -->
-
-
-                <!-- Icono de lupa para móviles -->
                 <button type="button"
                     class="p-2 md:hidden text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700">
                     <i class="fas fa-search w-5 h-5"></i>
@@ -123,6 +116,13 @@
                 </a>
             </li>
             <li>
+                <a routerLink="/dashboard/patients" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fas fa-users w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                    <span class="ms-3">Pacientes</span>
+                </a>
+            </li>
+            <li>
                 <a routerLink="/monitoreo" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="fas fa-tv w-5 h-5 text-gray-500 dark:text-gray-400"></i>
@@ -134,13 +134,6 @@
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="fas fa-chart-bar w-5 h-5 text-gray-500 dark:text-gray-400"></i>
                     <span class="ms-3">Reportes</span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/pacientes" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="fas fa-users w-5 h-5 text-gray-500 dark:text-gray-400"></i>
-                    <span class="ms-3">Pacientes</span>
                 </a>
             </li>
             <li>

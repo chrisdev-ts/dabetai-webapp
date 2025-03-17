@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { SidebarNavbarComponent } from "./shared/components/sidebar-navbar/sidebar-navbar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent, NavbarComponent],
+  imports: [RouterOutlet, SidebarNavbarComponent],
   templateUrl: './app.component.html'
 })
 export class AppComponent {

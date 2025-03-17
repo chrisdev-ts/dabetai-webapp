@@ -1,0 +1,175 @@
+<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start rtl:justify-end">
+                <button data-drawer-target="sidebar" data-drawer-toggle="sidebar" aria-controls="sidebar" type="button"
+                    class="inline-flex items-center justify-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Abrir sidebar</span>
+                    <i class="fa-solid fa-bars w-5"></i>
+                </button>
+                <a href="#" class="flex ms-2 md:me-24">
+                    <img src="/assets/images/logo.png" class="h-8 me-3 dark:hidden" alt="Logo de la aplicación" />
+                    <img src="/assets/images/logo-dark.png" class="h-8 me-3 hidden dark:block"
+                        alt="Logo de la aplicación" />
+                </a>
+
+                <!-- Barra de búsqueda convertida en icono de lupa en dispositivos pequeños -->
+                <div class="relative hidden md:block lg:w-96">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-search text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    <input type="text" placeholder="Buscar..."
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <!-- <button type="button"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 md:px-4 md:py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Mejorar plan
+                </button> -->
+
+
+                <!-- Icono de lupa para móviles -->
+                <button type="button"
+                    class="p-2 md:hidden text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700">
+                    <i class="fas fa-search w-5 h-5"></i>
+                </button>
+
+                <button type="button"
+                    class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700">
+                    <i class="fas fa-bell w-5 h-5"></i>
+                    <span class="sr-only">Notificaciones</span>
+                </button>
+
+                <button id="theme-toggle" type="button"
+                    class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <div class="flex items-center ms-3">
+                    <div>
+                        <button type="button"
+                            class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                            <span class="sr-only">Abrir menú de usuario</span>
+                            <img class="w-8 h-8 rounded-full"
+                                src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                        </button>
+                    </div>
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow-sm dark:bg-gray-700 dark:divide-gray-600"
+                        id="dropdown-user">
+                        <div class="px-4 py-3" role="none">
+                            <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                Nombre del usuario
+                            </p>
+                            <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                                usuario&#64;example.com
+                            </p>
+                        </div>
+                        <ul class="py-1" role="none">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Configuración</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<aside id="sidebar"
+    class="fixed top-0 left-0 z-40 w-52 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+    aria-label="Sidebar">
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 flex flex-col">
+        <!-- Menú principal -->
+        <ul class="space-y-2 font-medium flex-grow">
+            <li>
+                <div class="relative mb-4 mt-1 md:hidden">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                    </div>
+                    <input type="text" placeholder="Buscar..."
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                </div>
+            </li>
+            <li>
+                <a routerLink="/dashboard/general-view"
+                    routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ">
+                    <i class="fas fa-tachometer-alt w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                    <span class="ms-3">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/monitoreo" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fas fa-tv w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                    <span class="ms-3">Monitoreo</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/reportes" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fas fa-chart-bar w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                    <span class="ms-3">Reportes</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/pacientes" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fas fa-users w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                    <span class="ms-3">Pacientes</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/prediccion" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fas fa-chart-line w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                    <span class="ms-3">Predicción</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Accesos rápidos -->
+        <div class="mt-auto border-t pt-3 dark:border-gray-700">
+            <ul class="space-y-2">
+                <li>
+                    <a routerLink="/configuracion" routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <i class="fas fa-cog w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                        <span class="ms-3">Configuración</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/logout"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <i class="fas fa-sign-out-alt w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+                        <span class="ms-3">Cerrar sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

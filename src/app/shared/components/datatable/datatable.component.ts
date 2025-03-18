@@ -48,7 +48,7 @@ export class DatatableComponent implements AfterViewInit {
           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
             <li><a href="#" data-action="preview" data-index="${index}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-eye me-2"></i> Previsualizar</a></li>
             <li><a href="#" data-action="edit" data-index="${index}" data-modal-target="create-update" data-modal-toggle="create-update" class="block px-4 py-2 text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-edit me-2"></i> Editar</a></li>
-            <li><a href="#" data-action="delete" data-index="${index}" class="block px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-trash me-2"></i> Eliminar</a></li>
+            <li><a href="#" data-action="delete" data-index="${index}" data-modal-target="delete" data-modal-toggle="delete" class="block px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-trash me-2"></i> Eliminar</a></li>
           </ul>
         </div>
           </div>

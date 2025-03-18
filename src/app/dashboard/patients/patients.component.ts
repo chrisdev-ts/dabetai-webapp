@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DatatableComponent } from '../../shared/components/datatable/datatable.component';
 import { CreateUpdateComponent } from '../../shared/components/modal/create-update/create-update.component';
+import { DeleteComponent } from '../../shared/components/modal/delete/delete.component';
 
 @Component({
   selector: 'app-patients',
-  imports: [DatatableComponent, CreateUpdateComponent],
+  imports: [DatatableComponent, CreateUpdateComponent, DeleteComponent],
   templateUrl: './patients.component.html',
 })
 export class PatientsComponent {

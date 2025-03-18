@@ -1,7 +1,7 @@
-<app-datatable [headings]="headings" [data]="data" />
+<app-datatable [headings]="headings" [data]="data" (actionEvent)="onActionEvent($event)" />
 
-<app-update
+<app-create-update
   [data]="selectedPatient"
   [fields]="fields"
-  [title]="'Actualizar paciente'"
+  [title]="'paciente'"
 />

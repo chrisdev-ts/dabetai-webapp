@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { DatatableComponent } from '../../shared/components/datatable/datatable.component';
-import { UpdateComponent } from '../../shared/components/modal/update/update.component';
+import { CreateUpdateComponent } from '../../shared/components/modal/create-update/create-update.component';
 
 @Component({
   selector: 'app-patients',
-  imports: [DatatableComponent, UpdateComponent],
+  imports: [DatatableComponent, CreateUpdateComponent],
   templateUrl: './patients.component.html',
 })
 export class PatientsComponent {
-  selectedPatient: any[] = [];
+  selectedPatient: any = {};
 
   headings = [
     'Nombre',
@@ -30,7 +30,7 @@ export class PatientsComponent {
       'M',
       'PEGA900101HDFRRL01',
       'juan.perez@example.com',
-      '555-1234',
+      '5521234567',
     ],
     [
       'María',
@@ -40,7 +40,7 @@ export class PatientsComponent {
       'F',
       'LOMA850515MDFRRL02',
       'maria.lopez@example.com',
-      '555-5678',
+      '5534567890',
     ],
     [
       'Carlos',
@@ -50,7 +50,7 @@ export class PatientsComponent {
       'M',
       'HESC780923HDFRRL03',
       'carlos.hernandez@example.com',
-      '555-8765',
+      '5545678901',
     ],
     [
       'Ana',
@@ -60,7 +60,7 @@ export class PatientsComponent {
       'F',
       'GORO921212MDFRRL04',
       'ana.gomez@example.com',
-      '555-4321',
+      '5556789012',
     ],
     [
       'Luis',
@@ -70,7 +70,7 @@ export class PatientsComponent {
       'M',
       'RATO800330HDFRRL05',
       'luis.ramirez@example.com',
-      '555-6789',
+      '5567890123',
     ],
     [
       'Elena',
@@ -80,7 +80,7 @@ export class PatientsComponent {
       'F',
       'FEVA880707MDFRRL06',
       'elena.fernandez@example.com',
-      '555-9876',
+      '5578901234',
     ],
     [
       'Miguel',
@@ -90,7 +90,7 @@ export class PatientsComponent {
       'M',
       'MALU951111HDFRRL07',
       'miguel.martinez@example.com',
-      '555-5432',
+      '5589012345',
     ],
     [
       'Laura',
@@ -100,7 +100,7 @@ export class PatientsComponent {
       'F',
       'SAMO830202MDFRRL08',
       'laura.santos@example.com',
-      '555-2109',
+      '5590123456',
     ],
     [
       'Pedro',
@@ -110,7 +110,7 @@ export class PatientsComponent {
       'M',
       'RUGO750808HDFRRL09',
       'pedro.ruiz@example.com',
-      '555-6543',
+      '5512345678',
     ],
     [
       'Sofía',
@@ -120,7 +120,7 @@ export class PatientsComponent {
       'F',
       'NUFL980606MDFRRL10',
       'sofia.nunez@example.com',
-      '555-3210',
+      '5523456789',
     ],
     [
       'Jorge',
@@ -130,7 +130,7 @@ export class PatientsComponent {
       'M',
       'CAME820404HDFRRL11',
       'jorge.castro@example.com',
-      '555-7890',
+      '5534567890',
     ],
     [
       'Isabel',
@@ -140,7 +140,7 @@ export class PatientsComponent {
       'F',
       'ORPE911010MDFRRL12',
       'isabel.ortiz@example.com',
-      '555-0987',
+      '5545678901',
     ],
   ];
 
@@ -182,12 +182,12 @@ export class PatientsComponent {
       type: 'date',
       label: 'Fecha de nacimiento',
       icon: 'fas fa-calendar-alt',
-      min: 2000,
+      min: 1925,
       max: new Date().getFullYear(),
       required: true,
       errorMessages: {
         min: 'El año mimino permitido es {{ min }}.',
-        max: 'El año máximo permitido es {{ max }}.'
+        max: 'El año máximo permitido es {{ max }}.',
       },
     },
     {
@@ -215,7 +215,7 @@ export class PatientsComponent {
       icon: 'fas fa-envelope',
       required: true,
       maxLength: 50,
-      pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$',
+      pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$',
       placeholder: 'Ej. correo@examnple.com',
     },
     {
@@ -231,4 +231,42 @@ export class PatientsComponent {
       // },
     },
   ];
+
+  onActionEvent(event: { action: string; data: any }) {
+    if (event.action === 'edit') {
+      // Convertir la fila seleccionada (arreglo) en un objeto
+      this.selectedPatient = this.convertRowToObject(event.data);
+    } else if (event.action === 'create') {
+      this.selectedPatient = null; // Establecer selectedPatient como null para crear un nuevo registro
+    }
+  }
+
+  // Método para convertir una fila (arreglo) en un objeto
+  convertRowToObject(row: any[]): any {
+    return {
+      nombre: row[0],
+      apellidoPaterno: row[1],
+      apellidoMaterno: row[2],
+      fechaNacimiento: row[3],
+      sexo: row[4],
+      curp: row[5],
+      correo: row[6],
+      telefono: row[7],
+    };
+  }
+
+  handleUpdate(updatedData: any) {
+    // Lógica para actualizar el paciente
+    console.log('Actualizar paciente:', updatedData);
+  }
+  
+  handleCreate(newData: any) {
+    // Lógica para crear un nuevo paciente
+    console.log('Crear paciente:', newData);
+  }
+  
+  handleDelete(deletedData: any) {
+    // Lógica para eliminar el paciente
+    console.log('Eliminar paciente:', deletedData);
+  }
 }

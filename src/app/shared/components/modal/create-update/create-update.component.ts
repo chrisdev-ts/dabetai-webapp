@@ -1,18 +1,30 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  OnChanges,
+  SimpleChanges,
+  inject,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
-  selector: 'app-update',
-  standalone: true,
+  selector: 'app-create-update',
   imports: [ReactiveFormsModule, NgClass],
-  templateUrl: './update.component.html',
+  templateUrl: './create-update.component.html',
 })
-export class UpdateComponent implements OnChanges {
+export class CreateUpdateComponent implements OnChanges {
   dataForm: FormGroup;
 
-  @Input() data: any = {};
-  @Input() title: string = 'Actualizar';
+  @Input() data: any = null;
+  @Input() title: string = '';
   @Input() fields: {
     name: string;
     type: string;
@@ -49,6 +61,7 @@ export class UpdateComponent implements OnChanges {
   };
 
   @Output() onUpdate = new EventEmitter<any>();
+  @Output() onCreate = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
 
   private _fb = inject(FormBuilder);
@@ -93,7 +106,7 @@ export class UpdateComponent implements OnChanges {
       }
 
       // Asignar el valor inicial y las validaciones
-      group[field.name] = [this.data[field.name] || '', validators];
+      group[field.name] = [this.data?.[field.name] || '', validators];
     });
 
     this.dataForm = this._fb.group(group);
@@ -102,33 +115,39 @@ export class UpdateComponent implements OnChanges {
   getFieldErrors(fieldName: string): string[] {
     const errors = this.dataForm.get(fieldName)?.errors;
     const fieldConfig = this.fields.find((field) => field.name === fieldName);
-  
+
     if (!errors || !fieldConfig) {
       return [];
     }
-  
+
     return Object.keys(errors).map((errorKey) => {
       // Usar el mensaje personalizado si existe, de lo contrario, usar el genérico
       const customMessage = fieldConfig.errorMessages?.[errorKey];
       const genericMessage = this.genericErrorMessages[errorKey];
-  
-      let message = customMessage || genericMessage || `Error de validación: ${errorKey}`;
-  
+
+      let message =
+        customMessage || genericMessage || `Error de validación: ${errorKey}`;
+
       // Reemplazar placeholders con valores reales
       if (errors[errorKey]) {
         for (const key in errors[errorKey]) {
           message = message.replace(`{{ ${key} }}`, errors[errorKey][key]);
         }
       }
-  
+
       return message;
     });
   }
 
-  update() {
+  onSubmit() {
     if (this.dataForm.valid) {
-      this.onUpdate.emit(this.dataForm.value);
-      console.log(this.dataForm.value);
+      if (this.data) {
+        // Si hay data, es una actualización
+        this.onUpdate.emit(this.dataForm.value);
+      } else {
+        // Si no hay data, es una creación
+        this.onCreate.emit(this.dataForm.value);
+      }
     }
   }
 

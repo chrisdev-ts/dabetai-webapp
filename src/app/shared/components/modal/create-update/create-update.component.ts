@@ -14,11 +14,10 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { DeleteComponent } from "../delete/delete.component";
 
 @Component({
   selector: 'app-create-update',
-  imports: [ReactiveFormsModule, NgClass, DeleteComponent],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './create-update.component.html',
 })
 export class CreateUpdateComponent implements OnChanges {

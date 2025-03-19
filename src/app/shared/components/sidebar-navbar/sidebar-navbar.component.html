@@ -406,7 +406,7 @@
           <span class="ms-3">Médicos</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           routerLink="/monitoreo"
           routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
@@ -427,17 +427,17 @@
           ></i>
           <span class="ms-3">Reportes</span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a
-          routerLink="/prediccion"
+          routerLink="/dashboard/predictions"
           routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
         >
           <i
             class="fas fa-chart-line w-5 h-5 text-gray-500 dark:text-gray-400"
           ></i>
-          <span class="ms-3">Predicción</span>
+          <span class="ms-3">Predicciones</span>
         </a>
       </li>
       <li>
@@ -450,21 +450,21 @@
           <span class="ms-3">Asistente IA</span>
         </a>
       </li>
-      <li>
-        <a
-          routerLink="/dashboard/notifications"
-          routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
-          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-        >
-          <i class="fas fa-bell w-5 h-5 text-gray-500 dark:text-gray-400"></i>
-          <span class="ms-3">Notificaciones</span>
-        </a>
-      </li>
     </ul>
 
     <!-- Accesos rápidos -->
     <div class="mt-auto border-t pt-3 dark:border-gray-700">
       <ul class="space-y-2">
+        <li>
+          <a
+            routerLink="/dashboard/notifications"
+            routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          >
+            <i class="fas fa-bell w-5 h-5 text-gray-500 dark:text-gray-400"></i>
+            <span class="ms-3">Notificaciones</span>
+          </a>
+        </li>
         <li>
           <a
             routerLink="/dashboard/settings"

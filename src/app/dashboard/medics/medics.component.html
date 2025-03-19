@@ -1,0 +1,19 @@
+<app-datatable
+  [headings]="headings"
+  [data]="data"
+  (actionEvent)="onActionEvent($event)"
+/>
+
+<app-create-update
+  [data]="selectedMedic"
+  [fields]="fields"
+  [title]="'medico'"
+/>
+
+<app-read
+  [data]="selectedMedic"
+  [fields]="fields"
+  [title]="'Detalles del médico'"
+/>
+
+<app-delete />

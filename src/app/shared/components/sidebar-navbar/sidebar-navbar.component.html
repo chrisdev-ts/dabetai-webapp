@@ -1,5 +1,5 @@
 <nav
-  class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300"
 >
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
@@ -241,9 +241,9 @@
 
           <!-- Enlace para ver todas las notificaciones -->
           <a
-            href="#"
+            routerLink="/dashboard/notifications"
             class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
-          >
+            >
             <div class="inline-flex items-center">
               <i class="fas fa-eye me-2 text-gray-500 dark:text-gray-400"></i>
               Ver todas
@@ -348,11 +348,11 @@
 
 <aside
   id="sidebar"
-  class="fixed top-0 left-0 z-40 w-52 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+  class="fixed top-0 left-0 z-40 w-52 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300"
   aria-label="Sidebar"
 >
   <div
-    class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 flex flex-col"
+  class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 flex flex-col transition-colors duration-300"
   >
     <!-- Menú principal -->
     <ul class="space-y-2 font-medium flex-grow">
@@ -408,7 +408,7 @@
       </li>
       <li>
         <a
-          routerLink="/monitoreo"
+          routerLink="/dashboard/monitoreo"
           routerLinkActive="bg-gray-100 dark:bg-gray-700 transition-colors"
           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
         >

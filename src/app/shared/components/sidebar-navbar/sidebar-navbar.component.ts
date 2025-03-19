@@ -28,15 +28,23 @@ export class SidebarNavbarComponent implements OnInit {
   private setupThemeToggle(): void {
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (!themeToggleBtn) return;
-
+  
     themeToggleBtn.addEventListener('click', () => {
-      const isDarkMode = document.documentElement.classList.contains('dark');
-      const newTheme = isDarkMode ? 'light' : 'dark';
-
-      document.documentElement.classList.toggle('dark', !isDarkMode);
-      localStorage.setItem('color-theme', newTheme);
-
-      this.updateThemeIcons(!isDarkMode);
+      const htmlElement = document.documentElement;
+      const isDarkMode = htmlElement.classList.contains('dark');
+      
+      // Añade clase de transición temporal
+      htmlElement.classList.add('theme-transition');
+      
+      setTimeout(() => {
+        const newTheme = isDarkMode ? 'light' : 'dark';
+        htmlElement.classList.toggle('dark', !isDarkMode);
+        localStorage.setItem('color-theme', newTheme);
+        this.updateThemeIcons(!isDarkMode);
+        
+        // Remueve la clase de transición después de la animación
+        htmlElement.classList.remove('theme-transition');
+      }, 10);
     });
   }
 

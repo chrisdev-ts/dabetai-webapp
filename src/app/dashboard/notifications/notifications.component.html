@@ -1,0 +1,389 @@
+<!-- Contenedor principal -->
+<div class="p-6 bg-gray-50 dark:bg-gray-800 min-h-screen rounded-lg">
+  <!-- Título y acciones globales -->
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+      Notificaciones
+    </h1>
+    <button
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      <i class="fas fa-check-circle mr-2"></i> Marcar todas como leídas
+    </button>
+  </div>
+
+  <!-- Filtros de categorías -->
+  <div class="mb-6">
+    <div class="flex space-x-4">
+      <button
+        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        Todas
+      </button>
+      <button
+        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        <i class="fas fa-pills mr-2"></i> Medicación
+      </button>
+      <button
+        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        <i class="fas fa-tint mr-2"></i> Glucosa
+      </button>
+      <button
+        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        <i class="fas fa-running mr-2"></i> Ejercicio
+      </button>
+      <button
+        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        <i class="fas fa-stethoscope mr-2"></i> Revisiones
+      </button>
+    </div>
+  </div>
+
+  <!-- Lista de notificaciones -->
+  <div class="space-y-4">
+    <!-- Notificación 1: Recordatorio de medicación -->
+    <div
+      class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-pills text-blue-500 text-xl"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Recordatorio de medicación
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Es hora de tomar tu medicación para la diabetes.
+            </p>
+            <p class="text-xs text-gray-400 dark:text-gray-500">
+              Hace 5 minutos
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <!-- Badge de estado -->
+          <span
+            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+            >Nueva</span
+          >
+          <!-- Dropdown de acciones -->
+          <button
+            id="dropdownNotification1Button"
+            data-dropdown-toggle="dropdownNotification1"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <!-- Menú desplegable de acciones -->
+          <div
+            id="dropdownNotification1"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-check mr-2"></i> Marcar como leída
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-trash mr-2"></i> Eliminar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificación 2: Nivel de glucosa alto -->
+    <div
+      class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-tint text-red-500 text-xl"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Alerta de glucosa
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Tu nivel de glucosa es alto (250 mg/dL).
+            </p>
+            <p class="text-xs text-gray-400 dark:text-gray-500">Hace 1 hora</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <span
+            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+            >Nueva</span
+          >
+          <button
+            id="dropdownNotification2Button"
+            data-dropdown-toggle="dropdownNotification2"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <div
+            id="dropdownNotification2"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-check mr-2"></i> Marcar como leída
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-trash mr-2"></i> Eliminar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificación 3: Recordatorio de ejercicio -->
+    <div
+      class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-running text-green-500 text-xl"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Recordatorio de ejercicio
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Es hora de hacer ejercicio.
+            </p>
+            <p class="text-xs text-gray-400 dark:text-gray-500">Hace 2 horas</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <span
+            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
+            >Leída</span
+          >
+          <button
+            id="dropdownNotification3Button"
+            data-dropdown-toggle="dropdownNotification3"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <div
+            id="dropdownNotification3"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-check mr-2"></i> Marcar como leída
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-trash mr-2"></i> Eliminar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificación 4: Cita médica programada -->
+    <div
+      class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-stethoscope text-purple-500 text-xl"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Cita médica programada
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Tienes una cita médica mañana a las 10:00 AM.
+            </p>
+            <p class="text-xs text-gray-400 dark:text-gray-500">Hace 4 horas</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <span
+            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+            >Nueva</span
+          >
+          <button
+            id="dropdownNotification4Button"
+            data-dropdown-toggle="dropdownNotification4"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <div
+            id="dropdownNotification4"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-check mr-2"></i> Marcar como leída
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-trash mr-2"></i> Eliminar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificación 5: Hidratación -->
+    <div
+      class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-glass-water text-cyan-500 text-xl"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Recordatorio de hidratación
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              No olvides beber agua para mantenerte hidratado.
+            </p>
+            <p class="text-xs text-gray-400 dark:text-gray-500">Hace 6 horas</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <span
+            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
+            >Leída</span
+          >
+          <button
+            id="dropdownNotification5Button"
+            data-dropdown-toggle="dropdownNotification5"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <div
+            id="dropdownNotification5"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-check mr-2"></i> Marcar como leída
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-trash mr-2"></i> Eliminar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificación 6: Revisión de glucosa -->
+    <div
+      class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-tint text-blue-500 text-xl"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Revisión de glucosa
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Es momento de revisar tu nivel de glucosa.
+            </p>
+            <p class="text-xs text-gray-400 dark:text-gray-500">Hace 8 horas</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <span
+            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+            >Nueva</span
+          >
+          <button
+            id="dropdownNotification6Button"
+            data-dropdown-toggle="dropdownNotification6"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <div
+            id="dropdownNotification6"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-check mr-2"></i> Marcar como leída
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <i class="fas fa-trash mr-2"></i> Eliminar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

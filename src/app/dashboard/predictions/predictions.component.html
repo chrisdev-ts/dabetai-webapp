@@ -35,41 +35,69 @@
   
     <!-- Filtros -->
     <div class="mb-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4">
-      <div class="flex items-center space-x-4">
-        <!-- Dropdown para seleccionar paciente -->
-        <div>
-          <label for="patient" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Paciente</label>
-          <select
-            id="patient"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          >
-            <option selected>Selecciona un paciente</option>
-            <option value="1">Juan Pérez</option>
-            <option value="2">María López</option>
-            <option value="3">Carlos García</option>
-          </select>
-        </div>
-  
-        <!-- Dropdown para seleccionar complicación -->
-        <div>
-          <label for="complication" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Complicación</label>
-          <select
-            id="complication"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          >
-            <option selected>Selecciona una complicación</option>
-            <option value="1">Retinopatía diabética</option>
-            <option value="2">Neuropatía diabética</option>
-            <option value="3">Nefropatía diabética</option>
-          </select>
-        </div>
-  
-        <!-- Botón de aplicar filtros -->
-        <button
-          class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      <div class="flex flex-wrap items-center space-x-4">
+      <!-- Dropdown para seleccionar paciente -->
+      <div>
+        <label for="patient" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Paciente</label>
+        <select
+        id="patient"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         >
-          <i class="fas fa-filter mr-2"></i> Aplicar filtros
-        </button>
+        <option selected>Selecciona un paciente</option>
+        <option value="1">Juan Pérez</option>
+        <option value="2">María López</option>
+        <option value="3">Carlos García</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown para seleccionar complicación -->
+      <div>
+        <label for="complication" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Complicación</label>
+        <select
+        id="complication"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona una complicación</option>
+        <option value="1">Retinopatía diabética</option>
+        <option value="2">Neuropatía diabética</option>
+        <option value="3">Nefropatía diabética</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown para seleccionar rango de edad -->
+      <div>
+        <label for="age-range" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Rango de edad</label>
+        <select
+        id="age-range"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona un rango</option>
+        <option value="1">Menor de 30</option>
+        <option value="2">30-50</option>
+        <option value="3">Mayor de 50</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown para seleccionar nivel de riesgo -->
+      <div>
+        <label for="risk-level" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Nivel de riesgo</label>
+        <select
+        id="risk-level"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona un nivel</option>
+        <option value="1">Bajo</option>
+        <option value="2">Moderado</option>
+        <option value="3">Alto</option>
+        </select>
+      </div>
+    
+      <!-- Botón de aplicar filtros -->
+      <button
+        class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      >
+        <i class="fas fa-filter mr-2"></i> Aplicar filtros
+      </button>
       </div>
     </div>
   
@@ -155,7 +183,7 @@
 
     <!-- Línea de Tiempo -->
     <div class="mb-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4">
-        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Historial de Predicciones</h2>
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Historial de predicciones</h2>
         <ol class="relative border-l border-gray-200 dark:border-gray-700">
             <li class="mb-4 ml-6">
                 <span class="absolute flex items-center justify-center w-4 h-4 bg-blue-200 rounded-full -left-2 ring-4 ring-white dark:ring-gray-800 dark:bg-blue-900"></span>

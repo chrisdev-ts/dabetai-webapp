@@ -37,7 +37,7 @@ export class DatatableComponent implements AfterViewInit {
         },
       });
 
-      const dataWithActions = this.data.map((row, index) => [
+      const dataWithActions = this.formattedData.map((row, index) => [
         ...row,
         `
           <div class="relative inline-block text-left">
@@ -46,7 +46,7 @@ export class DatatableComponent implements AfterViewInit {
         </button>
         <div id="dropdownMenu-${index}" class="z-10 hidden absolute right-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-44 dark:bg-gray-700">
           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
-            <li><a href="#" data-action="preview" data-index="${index}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-eye me-2"></i> Previsualizar</a></li>
+            <li><a href="#" data-action="preview" data-index="${index}" data-modal-target="read" data-modal-toggle="read" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-eye me-2"></i> Previsualizar</a></li>
             <li><a href="#" data-action="edit" data-index="${index}" data-modal-target="create-update" data-modal-toggle="create-update" class="block px-4 py-2 text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-edit me-2"></i> Editar</a></li>
             <li><a href="#" data-action="delete" data-index="${index}" data-modal-target="delete" data-modal-toggle="delete" class="block px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-trash me-2"></i> Eliminar</a></li>
           </ul>
@@ -97,7 +97,7 @@ export class DatatableComponent implements AfterViewInit {
         searchContainer.insertAdjacentElement('afterbegin', createButton);
       }
     }
-}
+  }
 
   setupDropdowns(): void {
     document.querySelectorAll('[id^="dropdownButton-"]').forEach((button) => {
@@ -136,5 +136,9 @@ export class DatatableComponent implements AfterViewInit {
         this.data[index]
       );
     }
+  }
+
+  get formattedData(): any[][] {
+    return this.data.map((item) => Object.values(item));
   }
 }

@@ -1,0 +1,214 @@
+<!-- Contenedor principal -->
+<div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg min-h-screen">
+    <!-- Encabezado -->
+    <div class="flex items-center space-x-4 mb-6">
+      <i class="fas fa-chart-line text-3xl text-blue-500"></i>
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Predicciones de complicaciones</h1>
+    </div>
+
+    <!-- Alertas Inteligentes -->
+    <div class="p-4 mb-6 bg-red-100 border border-red-400 text-red-700 rounded-lg dark:bg-red-900 dark:border-red-600 dark:text-red-300">
+        <p><i class="fas fa-exclamation-triangle"></i> El paciente Juan Pérez tiene una alta probabilidad de desarrollar <strong>retinopatía diabética</strong>. Se recomienda intervención temprana.</p>
+    </div>
+
+    <!-- Resumen de Riesgos -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <!-- Tarjeta 1 -->
+        <div class="border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 p-4 bg-white dark:bg-gray-800">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Estado actual</h2>
+            <p class="text-gray-500 dark:text-gray-400">Paciente: <strong>Juan Pérez</strong></p>
+            <p class="text-gray-500 dark:text-gray-400">Complicación: <strong>Retinopatía diabética</strong></p>
+            <span class="mt-2 bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Riesgo alto</span>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 p-4 bg-white dark:bg-gray-800">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Última predicción</h2>
+            <p class="text-gray-500 dark:text-gray-400">Probabilidad: <strong>75%</strong></p>
+            <p class="text-gray-500 dark:text-gray-400">Fecha: <strong>18/03/2025</strong></p>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 p-4 bg-white dark:bg-gray-800">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Sugerencias</h2>
+            <p class="text-gray-500 dark:text-gray-400">Se recomienda realizar un <strong>examen oftalmológico</strong> en los próximos 15 días.</p>
+        </div>
+    </div>
+  
+    <!-- Filtros -->
+    <div class="mb-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4">
+      <div class="flex flex-wrap items-center space-x-4">
+      <!-- Dropdown para seleccionar paciente -->
+      <div>
+        <label for="patient" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Paciente</label>
+        <select
+        id="patient"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona un paciente</option>
+        <option value="1">Juan Pérez</option>
+        <option value="2">María López</option>
+        <option value="3">Carlos García</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown para seleccionar complicación -->
+      <div>
+        <label for="complication" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Complicación</label>
+        <select
+        id="complication"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona una complicación</option>
+        <option value="1">Retinopatía diabética</option>
+        <option value="2">Neuropatía diabética</option>
+        <option value="3">Nefropatía diabética</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown para seleccionar rango de edad -->
+      <div>
+        <label for="age-range" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Rango de edad</label>
+        <select
+        id="age-range"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona un rango</option>
+        <option value="1">Menor de 30</option>
+        <option value="2">30-50</option>
+        <option value="3">Mayor de 50</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown para seleccionar nivel de riesgo -->
+      <div>
+        <label for="risk-level" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Nivel de riesgo</label>
+        <select
+        id="risk-level"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+        <option selected>Selecciona un nivel</option>
+        <option value="1">Bajo</option>
+        <option value="2">Moderado</option>
+        <option value="3">Alto</option>
+        </select>
+      </div>
+    
+      <!-- Botón de aplicar filtros -->
+      <button
+        class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      >
+        <i class="fas fa-filter mr-2"></i> Aplicar filtros
+      </button>
+      </div>
+    </div>
+  
+    <!-- Tabla de predicciones -->
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4 mb-6">
+      <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Resultados de predicciones</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3">Paciente</th>
+              <th scope="col" class="px-6 py-3">Edad</th>
+              <th scope="col" class="px-6 py-3">Complicación</th>
+              <th scope="col" class="px-6 py-3">Probabilidad</th>
+              <th scope="col" class="px-6 py-3">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Fila 1 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td class="px-6 py-4">Juan Pérez</td>
+              <td class="px-6 py-4">45</td>
+              <td class="px-6 py-4">Retinopatía diabética</td>
+              <td class="px-6 py-4">75%</td>
+              <td class="px-6 py-4">
+                <button
+                  class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-300"
+                >
+                  <i class="fas fa-eye"></i> Ver detalles
+                </button>
+              </td>
+            </tr>
+            <!-- Fila 2 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td class="px-6 py-4">María López</td>
+              <td class="px-6 py-4">52</td>
+              <td class="px-6 py-4">Neuropatía diabética</td>
+              <td class="px-6 py-4">60%</td>
+              <td class="px-6 py-4">
+                <button
+                  class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-300"
+                >
+                  <i class="fas fa-eye"></i> Ver detalles
+                </button>
+              </td>
+            </tr>
+            <!-- Fila 3 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td class="px-6 py-4">Carlos García</td>
+              <td class="px-6 py-4">38</td>
+              <td class="px-6 py-4">Nefropatía diabética</td>
+              <td class="px-6 py-4">85%</td>
+              <td class="px-6 py-4">
+                <button
+                  class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-300"
+                >
+                  <i class="fas fa-eye"></i> Ver detalles
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Gráficos (placeholders) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <!-- Gráfico 1 -->
+      <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4">
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Distribución de complicaciones</h2>
+        <div class="bg-gray-100 h-48 rounded-lg flex items-center justify-center dark:bg-gray-700">
+          <p class="text-gray-500 dark:text-gray-400">Gráfico de distribución</p>
+        </div>
+      </div>
+      <!-- Gráfico 2 -->
+      <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4">
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tendencia de predicciones</h2>
+        <div class="bg-gray-100 h-48 rounded-lg flex items-center justify-center dark:bg-gray-700">
+          <p class="text-gray-500 dark:text-gray-400">Gráfico de tendencia</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Línea de Tiempo -->
+    <div class="mb-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4">
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Historial de predicciones</h2>
+        <ol class="relative border-l border-gray-200 dark:border-gray-700">
+            <li class="mb-4 ml-6">
+                <span class="absolute flex items-center justify-center w-4 h-4 bg-blue-200 rounded-full -left-2 ring-4 ring-white dark:ring-gray-800 dark:bg-blue-900"></span>
+                <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Predicción realizada</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Juan Pérez - 18/03/2025 - Probabilidad: 75%</p>
+            </li>
+            <li class="mb-4 ml-6">
+                <span class="absolute flex items-center justify-center w-4 h-4 bg-green-200 rounded-full -left-2 ring-4 ring-white dark:ring-gray-800 dark:bg-green-900"></span>
+                <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Consulta médica realizada</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">14/03/2025 - Evaluación oftalmológica pendiente</p>
+            </li>
+        </ol>
+    </div>
+  
+    <!-- Acciones -->
+    <div class="flex justify-end space-x-4">
+      <button
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      >
+        <i class="fas fa-download mr-2"></i> Exportar datos
+      </button>
+      <button
+        class="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+      >
+        <i class="fas fa-sync mr-2"></i> Actualizar
+      </button>
+    </div>
+  </div>

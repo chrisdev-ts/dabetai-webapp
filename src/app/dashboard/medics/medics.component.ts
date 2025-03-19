@@ -131,6 +131,16 @@ export class MedicsComponent {
       especialidad: 'Endocrinología',
       institucionSalud: 'Hospital Metropolitano',
     },
+    {
+      nombre: 'Elena',
+      apellidoPaterno: 'Navarro',
+      apellidoMaterno: 'Luna',
+      correo: 'elena.navarro@example.com',
+      telefono: '2712876552',
+      cedulaProfesional: 'SDI876552',
+      especialidad: 'Endocrinología',
+      institucionSalud: 'Hospital Metropolitano',
+    },
   ];
 
   fields = [

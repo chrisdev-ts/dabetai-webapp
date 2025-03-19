@@ -2,14 +2,21 @@ import { Component } from '@angular/core';
 import { DatatableComponent } from '../../shared/components/datatable/datatable.component';
 import { CreateUpdateComponent } from '../../shared/components/modal/create-update/create-update.component';
 import { DeleteComponent } from '../../shared/components/modal/delete/delete.component';
+import { ReadComponent } from '../../shared/components/modal/read/read.component';
+import { Patient } from '../../core/models/patient.model';
 
 @Component({
   selector: 'app-patients',
-  imports: [DatatableComponent, CreateUpdateComponent, DeleteComponent],
+  imports: [
+    DatatableComponent,
+    CreateUpdateComponent,
+    DeleteComponent,
+    ReadComponent,
+  ],
   templateUrl: './patients.component.html',
 })
 export class PatientsComponent {
-  selectedPatient: any = {};
+  selectedPatient: Patient | null = null;
 
   headings = [
     'Nombre',
@@ -22,127 +29,37 @@ export class PatientsComponent {
     'Teléfono',
   ];
 
-  data = [
-    [
-      'Juan',
-      'Pérez',
-      'García',
-      '1990-01-01',
-      'M',
-      'PEGA900101HDFRRL01',
-      'juan.perez@example.com',
-      '5521234567',
-    ],
-    [
-      'María',
-      'López',
-      'Martínez',
-      '1985-05-15',
-      'F',
-      'LOMA850515MDFRRL02',
-      'maria.lopez@example.com',
-      '5534567890',
-    ],
-    [
-      'Carlos',
-      'Hernández',
-      'Sánchez',
-      '1978-09-23',
-      'M',
-      'HESC780923HDFRRL03',
-      'carlos.hernandez@example.com',
-      '5545678901',
-    ],
-    [
-      'Ana',
-      'Gómez',
-      'Rodríguez',
-      '1992-12-12',
-      'F',
-      'GORO921212MDFRRL04',
-      'ana.gomez@example.com',
-      '5556789012',
-    ],
-    [
-      'Luis',
-      'Ramírez',
-      'Torres',
-      '1980-03-30',
-      'M',
-      'RATO800330HDFRRL05',
-      'luis.ramirez@example.com',
-      '5567890123',
-    ],
-    [
-      'Elena',
-      'Fernández',
-      'Vargas',
-      '1988-07-07',
-      'F',
-      'FEVA880707MDFRRL06',
-      'elena.fernandez@example.com',
-      '5578901234',
-    ],
-    [
-      'Miguel',
-      'Martínez',
-      'Luna',
-      '1995-11-11',
-      'M',
-      'MALU951111HDFRRL07',
-      'miguel.martinez@example.com',
-      '5589012345',
-    ],
-    [
-      'Laura',
-      'Santos',
-      'Morales',
-      '1983-02-02',
-      'F',
-      'SAMO830202MDFRRL08',
-      'laura.santos@example.com',
-      '5590123456',
-    ],
-    [
-      'Pedro',
-      'Ruiz',
-      'González',
-      '1975-08-08',
-      'M',
-      'RUGO750808HDFRRL09',
-      'pedro.ruiz@example.com',
-      '5512345678',
-    ],
-    [
-      'Sofía',
-      'Núñez',
-      'Flores',
-      '1998-06-06',
-      'F',
-      'NUFL980606MDFRRL10',
-      'sofia.nunez@example.com',
-      '5523456789',
-    ],
-    [
-      'Jorge',
-      'Castro',
-      'Mendoza',
-      '1982-04-04',
-      'M',
-      'CAME820404HDFRRL11',
-      'jorge.castro@example.com',
-      '5534567890',
-    ],
-    [
-      'Isabel',
-      'Ortiz',
-      'Pérez',
-      '1991-10-10',
-      'F',
-      'ORPE911010MDFRRL12',
-      'isabel.ortiz@example.com',
-      '5545678901',
-    ],
+  data: Patient[] = [
+    {
+      nombre: 'Juan',
+      apellidoPaterno: 'Pérez',
+      apellidoMaterno: 'García',
+      fechaNacimiento: '1990-01-01',
+      sexo: 'M',
+      curp: 'PEGA900101HDFRRL01',
+      correo: 'juan.perez@example.com',
+      telefono: '5521234567',
+    },
+    {
+      nombre: 'Juan',
+      apellidoPaterno: 'Pérez',
+      apellidoMaterno: 'García',
+      fechaNacimiento: '1990-01-01',
+      sexo: 'M',
+      curp: 'PEGA900101HDFRRL01',
+      correo: 'juan.perez@example.com',
+      telefono: '5521234567',
+    },
+    {
+      nombre: 'Juan',
+      apellidoPaterno: 'Pérez',
+      apellidoMaterno: 'García',
+      fechaNacimiento: '1990-01-01',
+      sexo: 'M',
+      curp: 'PEGA900101HDFRRL01',
+      correo: 'juan.perez@example.com',
+      telefono: '5521234567',
+    },
   ];
 
   fields = [
@@ -234,40 +151,22 @@ export class PatientsComponent {
   ];
 
   onActionEvent(event: { action: string; data: any }) {
-    if (event.action === 'edit') {
-      // Convertir la fila seleccionada (arreglo) en un objeto
-      this.selectedPatient = this.convertRowToObject(event.data);
+    if (event.action === 'edit' || event.action === 'preview') {
+      this.selectedPatient = event.data;
     } else if (event.action === 'create') {
-      this.selectedPatient = null; // Establecer selectedPatient como null para crear un nuevo registro
+      this.selectedPatient = null;
     }
   }
 
-  // Método para convertir una fila (arreglo) en un objeto
-  convertRowToObject(row: any[]): any {
-    return {
-      nombre: row[0],
-      apellidoPaterno: row[1],
-      apellidoMaterno: row[2],
-      fechaNacimiento: row[3],
-      sexo: row[4],
-      curp: row[5],
-      correo: row[6],
-      telefono: row[7],
-    };
-  }
-
-  handleUpdate(updatedData: any) {
-    // Lógica para actualizar el paciente
+  handleUpdate(updatedData: Patient) {
     console.log('Actualizar paciente:', updatedData);
   }
-  
-  handleCreate(newData: any) {
-    // Lógica para crear un nuevo paciente
+
+  handleCreate(newData: Patient) {
     console.log('Crear paciente:', newData);
   }
-  
-  handleDelete(deletedData: any) {
-    // Lógica para eliminar el paciente
+
+  handleDelete(deletedData: Patient) {
     console.log('Eliminar paciente:', deletedData);
   }
 }

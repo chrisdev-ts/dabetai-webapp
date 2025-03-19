@@ -1,9 +1,19 @@
-<app-datatable [headings]="headings" [data]="data" (actionEvent)="onActionEvent($event)" />
+<app-datatable
+  [headings]="headings"
+  [data]="data"
+  (actionEvent)="onActionEvent($event)"
+/>
 
 <app-create-update
   [data]="selectedPatient"
   [fields]="fields"
   [title]="'paciente'"
+/>
+
+<app-read
+  [data]="selectedPatient"
+  [fields]="fields"
+  [title]="'Detalles del paciente'"
 />
 
 <app-delete />

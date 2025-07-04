@@ -1,126 +1,156 @@
 <!-- Contenedor principal -->
 <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg min-h-screen">
-    <!-- Encabezado -->
-    <div class="flex items-center justify-between mb-6">
-      <div class="flex items-center space-x-4">
-        <i class="fas fa-robot text-3xl text-blue-500"></i>
-        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Asistente IA - Apoyo clínico</h1>
-      </div>
-      <!-- Botón de opciones avanzadas -->
-      <button
-        class="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-      >
-        <i class="fas fa-cog"></i> Opciones
-      </button>
-    </div>
-  
-    <!-- Área de conversación (sin scroll, se expande con los mensajes) -->
-    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4 mb-6">
-      <!-- Pregunta del médico -->
-      <div class="flex items-start space-x-4 mb-4 justify-end">
-        <div class="bg-green-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-900 dark:text-white">Tengo un paciente con diabetes tipo 2 que presenta niveles de glucosa en ayunas de 190 mg/dL. ¿Qué recomendaciones me puedes dar?</p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Hace 2 minutos</p>
-        </div>
-        <i class="fas fa-user-md text-xl text-green-500"></i>
-      </div>
-  
-      <!-- Respuesta del chatbot -->
-      <div class="flex items-start space-x-4 mb-4">
-        <i class="fas fa-robot text-xl text-blue-500"></i>
-        <div class="bg-blue-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-900 dark:text-white">
-            Un nivel de 190 mg/dL en ayunas es elevado. Te recomiendo:  
-            1️⃣ Ajustar la medicación si es necesario.  
-            2️⃣ Reforzar la educación sobre alimentación baja en carbohidratos refinados.  
-            3️⃣ Evaluar su adherencia al tratamiento y su rutina de ejercicio.  
-            4️⃣ Considerar un perfil de glucosa diario para monitoreo más detallado.
-          </p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Hace 1 minuto</p>
-        </div>
-      </div>
-  
-      <!-- Nueva pregunta del médico -->
-      <div class="flex items-start space-x-4 mb-4 justify-end">
-        <div class="bg-green-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-900 dark:text-white">¿Cuál es el objetivo de glucosa en ayunas recomendado para un paciente con diabetes tipo 2?</p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Hace 50 segundos</p>
-        </div>
-        <i class="fas fa-user-md text-xl text-green-500"></i>
-      </div>
-  
-      <!-- Respuesta del chatbot -->
-      <div class="flex items-start space-x-4 mb-4">
-        <i class="fas fa-robot text-xl text-blue-500"></i>
-        <div class="bg-blue-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-900 dark:text-white">
-            Según la ADA (Asociación Americana de Diabetes), los valores recomendados son:  
-            - **Glucosa en ayunas:** 80-130 mg/dL  
-            - **Glucosa postprandial (2 horas después de comer):** Menos de 180 mg/dL  
-            - **HbA1c:** Menos del 7% para la mayoría de los pacientes.
-          </p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Hace 30 segundos</p>
-        </div>
-      </div>
-  
-      <!-- Pregunta del médico -->
-      <div class="flex items-start space-x-4 mb-4 justify-end">
-        <div class="bg-green-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-900 dark:text-white">¿Podrías recordarme los efectos secundarios más comunes de la metformina?</p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Hace 20 segundos</p>
-        </div>
-        <i class="fas fa-user-md text-xl text-green-500"></i>
-      </div>
-  
-      <!-- Respuesta del chatbot -->
-      <div class="flex items-start space-x-4 mb-4">
-        <i class="fas fa-robot text-xl text-blue-500"></i>
-        <div class="bg-blue-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-900 dark:text-white">
-            Los efectos secundarios más comunes de la **metformina** incluyen:  
-            🔹 Problemas gastrointestinales (náuseas, diarrea, dolor abdominal).  
-            🔹 Sabor metálico en la boca.  
-            🔹 En casos raros, acidosis láctica (urgencia médica).  
-            Para reducir molestias, se recomienda iniciar con dosis bajas y tomarla con alimentos.
-          </p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Hace 10 segundos</p>
-        </div>
-      </div>
-  
-      <!-- Indicador de escritura -->
-      <div class="flex items-start space-x-4">
-        <i class="fas fa-robot text-xl text-blue-500"></i>
-        <div class="bg-blue-50 p-3 rounded-lg dark:bg-gray-700">
-          <p class="text-sm text-gray-500 dark:text-gray-400 animate-pulse">Escribiendo...</p>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Botones de sugerencias rápidas -->
-    <div class="mb-4">
-      <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">Sugerencias rápidas:</p>
-      <div class="flex flex-wrap gap-2">
-        <button class="px-3 py-2 text-sm bg-blue-100 text-blue-800 rounded-lg dark:bg-gray-700 dark:text-white">
-          Recordar guías de la ADA
-        </button>
-        <button class="px-3 py-2 text-sm bg-blue-100 text-blue-800 rounded-lg dark:bg-gray-700 dark:text-white">
-          Revisión de medicamentos para diabetes
-        </button>
-        <button class="px-3 py-2 text-sm bg-blue-100 text-blue-800 rounded-lg dark:bg-gray-700 dark:text-white">
-          Factores de riesgo cardiovascular
-        </button>
-      </div>
-    </div>
-  
-    <!-- Campo de entrada y botones de acción -->
+  <!-- Encabezado -->
+  <div class="flex items-center justify-between mb-6">
     <div class="flex items-center space-x-4">
-      <input type="text" placeholder="Escribe tu mensaje..." class="flex-grow p-3 border border-gray-200 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white" />
-      <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-3">
-        <i class="fas fa-paper-plane"></i>
+      <i class="fas fa-robot text-3xl text-primary"></i>
+      <h1 class="text-2xl font-bold text-slate-700 dark:text-white">
+        Asistente IA - Apoyo clínico
+      </h1>
+    </div>
+    <!-- Botón de opciones avanzadas -->
+    <button
+      class="text-slate-700 bg-white border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+      <i class="fas fa-cog"></i> Opciones
+    </button>
+  </div>
+
+  <!-- Área de conversación (sin scroll, se expande con los mensajes) -->
+  <div
+    class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-4 mb-6"
+  >
+    <!-- Pregunta del médico -->
+    <div class="flex items-start space-x-4 mb-4 justify-end">
+      <div class="bg-green-50 p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-slate-700 dark:text-white">
+          Tengo un paciente con diabetes tipo 2 que presenta niveles de glucosa
+          en ayunas de 190 mg/dL. ¿Qué recomendaciones me puedes dar?
+        </p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Hace 2 minutos</p>
+      </div>
+      <i class="fas fa-user-md text-xl text-green-500"></i>
+    </div>
+
+    <!-- Respuesta del chatbot -->
+    <div class="flex items-start space-x-4 mb-4">
+      <i class="fas fa-robot text-xl text-primary"></i>
+      <div class="bg-primary-light p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-slate-700 dark:text-white">
+          Un nivel de 190 mg/dL en ayunas es elevado. Te recomiendo: 1️⃣ Ajustar
+          la medicación si es necesario. 2️⃣ Reforzar la educación sobre
+          alimentación baja en carbohidratos refinados. 3️⃣ Evaluar su adherencia
+          al tratamiento y su rutina de ejercicio. 4️⃣ Considerar un perfil de
+          glucosa diario para monitoreo más detallado.
+        </p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Hace 1 minuto</p>
+      </div>
+    </div>
+
+    <!-- Nueva pregunta del médico -->
+    <div class="flex items-start space-x-4 mb-4 justify-end">
+      <div class="bg-green-50 p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-slate-700 dark:text-white">
+          ¿Cuál es el objetivo de glucosa en ayunas recomendado para un paciente
+          con diabetes tipo 2?
+        </p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Hace 50 segundos</p>
+      </div>
+      <i class="fas fa-user-md text-xl text-green-500"></i>
+    </div>
+
+    <!-- Respuesta del chatbot -->
+    <div class="flex items-start space-x-4 mb-4">
+      <i class="fas fa-robot text-xl text-primary"></i>
+      <div class="bg-primary-light p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-slate-700 dark:text-white">
+          Según la ADA (Asociación Americana de Diabetes), los valores
+          recomendados son: - Glucosa en ayunas: 80-130 mg/dL - Glucosa
+          postprandial (2 horas después de comer): Menos de 180 mg/dL -
+          HbA1c: Menos del 7% para la mayoría de los pacientes.
+        </p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Hace 30 segundos</p>
+      </div>
+    </div>
+
+    <!-- Pregunta del médico -->
+    <div class="flex items-start space-x-4 mb-4 justify-end">
+      <div class="bg-green-50 p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-slate-700 dark:text-white">
+          ¿Podrías recordarme los efectos secundarios más comunes de la
+          metformina?
+        </p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Hace 20 segundos</p>
+      </div>
+      <i class="fas fa-user-md text-xl text-green-500"></i>
+    </div>
+
+    <!-- Respuesta del chatbot -->
+    <div class="flex items-start space-x-4 mb-4">
+      <i class="fas fa-robot text-xl text-primary"></i>
+      <div class="bg-primary-light p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-slate-700 dark:text-white">
+          Los efectos secundarios más comunes de la metformina incluyen: 🔹
+          Problemas gastrointestinales (náuseas, diarrea, dolor abdominal). 🔹
+          Sabor metálico en la boca. 🔹 En casos raros, acidosis láctica
+          (urgencia médica). Para reducir molestias, se recomienda iniciar con
+          dosis bajas y tomarla con alimentos.
+        </p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Hace 10 segundos</p>
+      </div>
+    </div>
+
+    <!-- Indicador de escritura -->
+    <div class="flex items-start space-x-4">
+      <i class="fas fa-robot text-xl text-primary"></i>
+      <div class="bg-primary-light p-3 rounded-lg dark:bg-gray-700">
+        <p class="text-sm text-gray-500 dark:text-gray-400 animate-pulse">
+          Escribiendo...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botones de sugerencias rápidas -->
+  <div class="mb-4">
+    <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+      Sugerencias rápidas:
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <button
+        class="px-3 py-2 text-sm bg-primary-light text-primary rounded-lg dark:bg-gray-700 dark:text-white"
+      >
+        Recordar guías de la ADA
       </button>
-      <button class="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 font-medium rounded-lg text-sm px-4 py-3">
-        <i class="fas fa-trash"></i>
+      <button
+        class="px-3 py-2 text-sm bg-primary-light text-primary rounded-lg dark:bg-gray-700 dark:text-white"
+      >
+        Revisión de medicamentos para diabetes
+      </button>
+      <button
+        class="px-3 py-2 text-sm bg-primary-light text-primary rounded-lg dark:bg-gray-700 dark:text-white"
+      >
+        Factores de riesgo cardiovascular
       </button>
     </div>
   </div>
-  
+
+  <!-- Campo de entrada y botones de acción -->
+  <div class="flex items-center space-x-4">
+    <input
+      type="text"
+      placeholder="Escribe tu mensaje..."
+      class="flex-grow p-3 border border-gray-200 rounded-lg shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+    />
+    <button
+      class="text-white bg-primary hover:bg-primary-dark font-medium rounded-lg text-sm px-4 py-3"
+    >
+      <i class="fas fa-paper-plane"></i>
+    </button>
+    <button
+      class="text-slate-700 bg-white border border-gray-200 hover:bg-gray-100 font-medium rounded-lg text-sm px-4 py-3"
+    >
+      <i class="fas fa-trash"></i>
+    </button>
+  </div>
+</div>

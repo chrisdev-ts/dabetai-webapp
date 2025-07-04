@@ -1,0 +1,9 @@
+/* Estilos para el cambio de color de iconos en la sidebar */
+.active-link .sidebar-icon {
+  color: white !important;
+}
+
+/* Iconos activos en modo claro */
+.active-link:hover .sidebar-icon {
+  color: white !important;
+}

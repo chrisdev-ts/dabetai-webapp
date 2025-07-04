@@ -1,184 +1,549 @@
-<div class="flex-1 overflow-y-auto">
-  <!-- Sección de métricas -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-    <!-- Tarjeta 1: Pacientes activos -->
-    <div
-      class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
-    >
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-gray-500 dark:text-gray-400">Pacientes activos</p>
-          <p class="text-3xl font-bold dark:text-white">1,234</p>
-        </div>
-        <i class="fas fa-users text-blue-500 text-2xl"></i>
-      </div>
+<div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg min-h-screen">
+  <!-- Encabezado del dashboard -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-700 dark:text-white">
+        Panel de control médico
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400">
+        Resumen de pacientes bajo su supervisión
+      </p>
     </div>
-
-    <!-- Tarjeta 2: Nivel de glucosa promedio -->
-    <div
-      class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
-    >
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-gray-500 dark:text-gray-400">Glucosa promedio</p>
-          <p class="text-3xl font-bold dark:text-white">132 mg/dL</p>
-        </div>
-        <i class="fas fa-tint text-green-500 text-2xl"></i>
+    <div class="flex items-center space-x-3">
+      <div class="text-right">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          Última actualización
+        </p>
+        <p class="text-sm font-semibold text-slate-700 dark:text-white">
+          {{ getCurrentTime() }}
+        </p>
       </div>
-    </div>
-
-    <!-- Tarjeta 3: Predicciones realizadas -->
-    <div
-      class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
-    >
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-gray-500 dark:text-gray-400">Predicciones</p>
-          <p class="text-3xl font-bold dark:text-white">567</p>
-        </div>
-        <i class="fas fa-chart-line text-purple-500 text-2xl"></i>
-      </div>
-    </div>
-
-    <!-- Tarjeta 4: Alertas recientes -->
-    <div
-      class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
-    >
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-gray-500 dark:text-gray-400">Alertas</p>
-          <p class="text-3xl font-bold dark:text-white">12</p>
-        </div>
-        <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+      <div
+        class="w-10 h-10 bg-primary-light dark:bg-primary rounded-full flex items-center justify-center"
+      >
+        <i class="fas fa-user-md text-primary dark:text-primary-light"></i>
       </div>
     </div>
   </div>
 
-  <!-- Gráficos y tablas -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-    <!-- Gráfico de glucosa -->
+  <!-- Alertas críticas -->
+  <div class="mb-6">
+    <div class="flex items-center mb-3">
+      <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+      <h2 class="text-lg font-semibold text-slate-700 dark:text-white">
+        Alertas críticas
+      </h2>
+    </div>
+    <div class="space-y-3">
+      <div
+        class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg dark:bg-red-900/20 dark:border-red-400"
+      >
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="font-semibold text-red-700 dark:text-red-300">
+              Juan Pérez - Glucosa crítica
+            </p>
+            <p class="text-sm text-red-600 dark:text-red-400">
+              Última lectura: 280 mg/dL - Hace 15 minutos
+            </p>
+          </div>
+          <button
+            class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
+          >
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+      <div
+        class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg dark:bg-yellow-900/20 dark:border-yellow-400"
+      >
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="font-semibold text-yellow-700 dark:text-yellow-300">
+              María González - Sin medición
+            </p>
+            <p class="text-sm text-yellow-600 dark:text-yellow-400">
+              No hay registros desde hace 2 días
+            </p>
+          </div>
+          <button
+            class="text-yellow-600 hover:text-yellow-800 dark:text-yellow-400 dark:hover:text-yellow-300"
+          >
+            <i class="fas fa-phone"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Métricas principales -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <!-- Total de pacientes -->
     <div
-      class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
     >
-      <h3 class="text-xl font-semibold dark:text-white">Niveles de clucosa</h3>
-      <div class="mt-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Total de pacientes</p>
+          <p class="text-3xl font-bold text-slate-700 dark:text-white">47</p>
+          <p class="text-sm text-green-600 dark:text-green-400">+3 este mes</p>
+        </div>
         <div
-          class="max-w-sm w-full bg-white rounded-lg shadow-sm dark:bg-gray-800 p-4 md:p-6"
+          class="w-12 h-12 bg-primary-light dark:bg-primary rounded-full flex items-center justify-center"
         >
-          <div class="flex justify-between">
-            <div>
-              <h5
-                class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2"
-              >
-                140 mg/dL
-              </h5>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-                Promedio semanal
-              </p>
-            </div>
-            <div
-              class="flex items-center px-2.5 py-0.5 text-base font-semibold text-red-500 dark:text-red-500 text-center"
-            >
-              +15%
-              <svg
-                class="w-3 h-3 ms-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 14"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13V1m0 0L1 5m4-4 4 4"
-                />
-              </svg>
+          <i
+            class="fas fa-users text-primary dark:text-primary-light text-xl"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pacientes en riesgo -->
+    <div
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
+    >
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Pacientes en riesgo</p>
+          <p class="text-3xl font-bold text-red-600 dark:text-red-400">12</p>
+          <p class="text-sm text-red-500 dark:text-red-400">
+            Requieren atención
+          </p>
+        </div>
+        <div
+          class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center"
+        >
+          <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Citas pendientes -->
+    <div
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
+    >
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Citas pendientes</p>
+          <p class="text-3xl font-bold text-blue-600 dark:text-blue-400">8</p>
+          <p class="text-sm text-blue-500 dark:text-blue-400">Esta semana</p>
+        </div>
+        <div
+          class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"
+        >
+          <i class="fas fa-calendar-check text-blue-500 text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adherencia promedio -->
+    <div
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
+    >
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Adherencia promedio</p>
+          <p class="text-3xl font-bold text-green-600 dark:text-green-400">
+            78%
+          </p>
+          <p class="text-sm text-green-500 dark:text-green-400">
+            Al tratamiento
+          </p>
+        </div>
+        <div
+          class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center"
+        >
+          <i class="fas fa-pills text-green-500 text-xl"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gráficos principales -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <!-- Tendencia de control glucémico -->
+    <div
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-semibold text-slate-700 dark:text-white">
+          Control glucémico general
+        </h3>
+        <div class="flex items-center space-x-2">
+          <span class="text-sm text-gray-500 dark:text-gray-400"
+            >Promedio:</span
+          >
+          <span class="text-lg font-semibold text-slate-700 dark:text-white"
+            >145 mg/dL</span
+          >
+        </div>
+      </div>
+      <div class="w-full">
+        <div
+          class="w-full bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-700 dark:border-gray-600 p-2"
+        >
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-2"
+          >
+            <div class="flex items-center space-x-4">
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span class="text-xs text-gray-600 dark:text-gray-400"
+                  >Óptimo (70-130)</span
+                >
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <span class="text-xs text-gray-600 dark:text-gray-400"
+                  >Moderado (130-180)</span
+                >
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <span class="text-xs text-gray-600 dark:text-gray-400"
+                  >Crítico (>180)</span
+                >
+              </div>
             </div>
           </div>
-          <div id="glucose-chart" class="w-[425px]"></div>
+          <div id="glucose-chart" class="w-full h-44 sm:h-52 md:h-56"></div>
         </div>
       </div>
     </div>
 
-    <!-- Tabla de pacientes recientes -->
+    <!-- Pacientes por estado -->
     <div
-      class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
     >
-      <h3 class="text-xl font-semibold dark:text-white">Pacientes recientes</h3>
-      <div class="mt-4">
-        <table class="w-full text-left dark:text-white">
-          <thead>
-            <tr class="border-b dark:border-gray-700">
-              <th class="py-2">Nombre</th>
-              <th class="py-2">Última lectura</th>
-              <th class="py-2">Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-2">Juan Pérez</td>
-              <td class="py-2">145 mg/dL</td>
-              <td class="py-2 text-red-500">Alerta</td>
-            </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-2">María Gómez</td>
-              <td class="py-2">98 mg/dL</td>
-              <td class="py-2 text-green-500">Estable</td>
-            </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-2">Carlos López</td>
-              <td class="py-2">120 mg/dL</td>
-              <td class="py-2 text-yellow-500">Moderado</td>
-            </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-2">Ana Martínez</td>
-              <td class="py-2">160 mg/dL</td>
-              <td class="py-2 text-red-500">Alerta</td>
-            </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-2">Pedro Rodríguez</td>
-              <td class="py-2">110 mg/dL</td>
-              <td class="py-2 text-green-500">Estable</td>
-            </tr>
-          </tbody>
-        </table>
+      <h3 class="text-lg font-semibold text-slate-700 dark:text-white mb-4">
+        Distribución por estado de control
+      </h3>
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+            <span class="text-sm text-gray-600 dark:text-gray-400"
+              >Controlado</span
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+              <div
+                class="bg-green-500 h-2 rounded-full"
+                style="width: 60%"
+              ></div>
+            </div>
+            <span class="text-sm font-semibold text-slate-700 dark:text-white"
+              >28</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-4 h-4 bg-yellow-500 rounded-full"></div>
+            <span class="text-sm text-gray-600 dark:text-gray-400"
+              >Moderado</span
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+              <div
+                class="bg-yellow-500 h-2 rounded-full"
+                style="width: 35%"
+              ></div>
+            </div>
+            <span class="text-sm font-semibold text-slate-700 dark:text-white"
+              >15</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+            <span class="text-sm text-gray-600 dark:text-gray-400"
+              >Descontrolado</span
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 25%"></div>
+            </div>
+            <span class="text-sm font-semibold text-slate-700 dark:text-white"
+              >4</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-600 dark:text-gray-400"
+            >Objetivo institucional</span
+          >
+          <span class="font-semibold text-green-600 dark:text-green-400"
+            >≥70% controlados</span
+          >
+        </div>
+        <div class="mt-2 w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+          <div class="bg-green-500 h-2 rounded-full" style="width: 60%"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Sección de Actividad reciente -->
+  <!-- Pacientes que requieren atención -->
   <div
-    class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+    class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm mb-6"
   >
-    <h3 class="text-xl font-semibold dark:text-white mb-4">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg font-semibold text-slate-700 dark:text-white">
+        Pacientes que requieren atención
+      </h3>
+      <button
+        class="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-light text-sm"
+      >
+        Ver todos
+      </button>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-4 py-3 font-medium">Paciente</th>
+            <th scope="col" class="px-4 py-3 font-medium">Última medición</th>
+            <th scope="col" class="px-4 py-3 font-medium">HbA1c</th>
+            <th scope="col" class="px-4 py-3 font-medium">Próxima Cita</th>
+            <th scope="col" class="px-4 py-3 font-medium">Prioridad</th>
+            <th scope="col" class="px-4 py-3 font-medium">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          >
+            <td class="px-4 py-3">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center"
+                >
+                  <span
+                    class="text-xs font-semibold text-red-600 dark:text-red-400"
+                    >JP</span
+                  >
+                </div>
+                <div>
+                  <p class="font-medium text-slate-700 dark:text-white">
+                    Juan Pérez
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    45 años
+                  </p>
+                </div>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <div>
+                <p class="font-medium text-red-600 dark:text-red-400">
+                  280 mg/dL
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  Hace 15 min
+                </p>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <span
+                class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded dark:bg-red-900 dark:text-red-300"
+              >
+                9.2%
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="text-sm text-slate-700 dark:text-white">Mañana</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">10:00 AM</p>
+            </td>
+            <td class="px-4 py-3">
+              <span
+                class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded dark:bg-red-900 dark:text-red-300"
+              >
+                Alta
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex space-x-2">
+                <button
+                  class="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-light"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300"
+                >
+                  <i class="fas fa-phone"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          >
+            <td class="px-4 py-3">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-8 h-8 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center"
+                >
+                  <span
+                    class="text-xs font-semibold text-yellow-600 dark:text-yellow-400"
+                    >MG</span
+                  >
+                </div>
+                <div>
+                  <p class="font-medium text-slate-700 dark:text-white">
+                    María González
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    52 años
+                  </p>
+                </div>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <div>
+                <p class="font-medium text-gray-500 dark:text-gray-400">
+                  Sin registro
+                </p>
+                <p class="text-xs text-red-500 dark:text-red-400">
+                  Hace 2 días
+                </p>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded dark:bg-yellow-900 dark:text-yellow-300"
+              >
+                7.8%
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="text-sm text-slate-700 dark:text-white">Viernes</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">2:30 PM</p>
+            </td>
+            <td class="px-4 py-3">
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded dark:bg-yellow-900 dark:text-yellow-300"
+              >
+                Media
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex space-x-2">
+                <button
+                  class="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-light"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300"
+                >
+                  <i class="fas fa-phone"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          >
+            <td class="px-4 py-3">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center"
+                >
+                  <span
+                    class="text-xs font-semibold text-red-600 dark:text-red-400"
+                    >CL</span
+                  >
+                </div>
+                <div>
+                  <p class="font-medium text-slate-700 dark:text-white">
+                    Carlos López
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    38 años
+                  </p>
+                </div>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <div>
+                <p class="font-medium text-red-600 dark:text-red-400">
+                  195 mg/dL
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  Hace 2 hrs
+                </p>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <span
+                class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded dark:bg-red-900 dark:text-red-300"
+              >
+                8.5%
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="text-sm text-slate-700 dark:text-white">Lunes</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">9:00 AM</p>
+            </td>
+            <td class="px-4 py-3">
+              <span
+                class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded dark:bg-red-900 dark:text-red-300"
+              >
+                Alta
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex space-x-2">
+                <button
+                  class="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-light"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300"
+                >
+                  <i class="fas fa-phone"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Actividad reciente -->
+  <div
+    class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm"
+  >
+    <h3 class="text-lg font-semibold text-slate-700 dark:text-white mb-4">
       Actividad reciente
     </h3>
     <div class="space-y-4">
-      <!-- Evento 1 -->
-      <div class="flex items-center space-x-4">
+      <div
+        class="flex items-center space-x-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
+      >
         <div class="flex-shrink-0">
-          <i class="fas fa-bell text-yellow-500 text-xl"></i>
+          <div
+            class="w-10 h-10 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-exclamation-triangle text-red-500 text-lg"></i>
+          </div>
         </div>
-        <div>
+        <div class="flex-1">
           <p class="text-gray-700 dark:text-gray-300">
-            Nueva alerta generada para
-            <span class="font-semibold">Juan Pérez</span>.
-          </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Hace 5 minutos</p>
-        </div>
-      </div>
-
-      <!-- Evento 2 -->
-      <div class="flex items-center space-x-4">
-        <div class="flex-shrink-0">
-          <i class="fas fa-chart-line text-purple-500 text-xl"></i>
-        </div>
-        <div>
-          <p class="text-gray-700 dark:text-gray-300">
-            Predicción realizada para
-            <span class="font-semibold">María Gómez</span>.
+            <span class="font-semibold">Juan Pérez</span> reportó glucosa
+            crítica (280 mg/dL)
           </p>
           <p class="text-sm text-gray-500 dark:text-gray-400">
             Hace 15 minutos
@@ -186,33 +551,61 @@
         </div>
       </div>
 
-      <!-- Evento 3 -->
-      <div class="flex items-center space-x-4">
+      <div
+        class="flex items-center space-x-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
+      >
         <div class="flex-shrink-0">
-          <i class="fas fa-tint text-green-500 text-xl"></i>
+          <div
+            class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-calendar-check text-blue-500 text-lg"></i>
+          </div>
         </div>
-        <div>
+        <div class="flex-1">
           <p class="text-gray-700 dark:text-gray-300">
-            Nivel de glucosa actualizado para
-            <span class="font-semibold">Carlos López</span>.
+            Cita completada con <span class="font-semibold">Ana Martínez</span>
           </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Hace 30 minutos
-          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Hace 1 hora</p>
         </div>
       </div>
 
-      <!-- Evento 4 -->
-      <div class="flex items-center space-x-4">
+      <div
+        class="flex items-center space-x-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
+      >
         <div class="flex-shrink-0">
-          <i class="fas fa-user-plus text-blue-500 text-xl"></i>
+          <div
+            class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-pills text-green-500 text-lg"></i>
+          </div>
         </div>
-        <div>
+        <div class="flex-1">
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="font-semibold">Roberto Silva</span> actualizó
+            medicación
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Hace 2 horas</p>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center space-x-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
+      >
+        <div class="flex-shrink-0">
+          <div
+            class="w-10 h-10 bg-primary-light dark:bg-primary rounded-full flex items-center justify-center"
+          >
+            <i
+              class="fas fa-user-plus text-primary dark:text-primary-light text-lg"
+            ></i>
+          </div>
+        </div>
+        <div class="flex-1">
           <p class="text-gray-700 dark:text-gray-300">
             Nuevo paciente registrado:
-            <span class="font-semibold">Ana Martínez</span>.
+            <span class="font-semibold">Elena Rodríguez</span>
           </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Hace 1 hora</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Hace 3 horas</p>
         </div>
       </div>
     </div>

@@ -1,15 +1,31 @@
 <div class="min-h-screen flex bg-white dark:bg-gray-700">
   <!-- Columna del formulario -->
-  <div class="w-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center py-6 px-3">
-    <div class="w-full max-w-2xl mx-4 bg-white dark:bg-gray-700 rounded-lg shadow-md p-8">
+  <div
+    class="w-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center py-6 px-3"
+  >
+    <div
+      class="w-full max-w-2xl mx-4 bg-white dark:bg-gray-700 rounded-lg shadow-md p-8"
+    >
       <!-- Encabezado con logo -->
       <div class="mb-8 text-center">
         <!-- Logo para modo claro -->
-        <img src="/assets/images/logo.png" alt="Logo de la aplicación" class="w-32 mx-auto mb-6 dark:hidden">
+        <img
+          src="/assets/images/logo.png"
+          alt="Logo de la aplicación"
+          class="w-32 mx-auto mb-6 dark:hidden"
+        />
         <!-- Logo para modo oscuro -->
-        <img src="/assets/images/logo-dark.png" alt="Logo de la aplicación" class="w-32 mx-auto mb-6 hidden dark:block">
-        <h1 class="font-semibold text-3xl text-gray-800 dark:text-white mb-4">Regístrate</h1>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Crea una cuenta para empezar a disfrutar de nuestros servicios.</p>
+        <img
+          src="/assets/images/logo-dark.png"
+          alt="Logo de la aplicación"
+          class="w-32 mx-auto mb-6 hidden dark:block"
+        />
+        <h1 class="font-semibold text-3xl text-gray-800 dark:text-white mb-4">
+          Regístrate
+        </h1>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Crea una cuenta para empezar a disfrutar de nuestros servicios.
+        </p>
       </div>
 
       <!-- Formulario de registro -->
@@ -20,40 +36,76 @@
           <div>
             <!-- Campo de nombre -->
             <div class="mb-6">
-              <label for="name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Nombre(s)*</label>
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Nombre(s)*</label
+              >
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <i class="fa-solid fa-user text-gray-500 dark:text-gray-400"></i>
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                >
+                  <i
+                    class="fa-solid fa-user text-gray-500 dark:text-gray-400"
+                  ></i>
                 </div>
-                <input type="text" id="name"
-                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
-                  placeholder="Ingresa tu nombre" required>
+                <input
+                  type="text"
+                  id="name"
+                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-slate-700 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
+                  placeholder="Ingresa tu nombre"
+                  required
+                />
               </div>
             </div>
 
             <!-- Campo de apellido paterno -->
             <div class="mb-6">
-              <label for="last-name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Apellido paterno*</label>
+              <label
+                for="last-name"
+                class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Apellido paterno*</label
+              >
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <i class="fa-solid fa-user text-gray-500 dark:text-gray-400"></i>
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                >
+                  <i
+                    class="fa-solid fa-user text-gray-500 dark:text-gray-400"
+                  ></i>
                 </div>
-                <input type="text" id="last-name"
-                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
-                  placeholder="Ingresa tu apellido paterno" required>
+                <input
+                  type="text"
+                  id="last-name"
+                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-slate-700 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
+                  placeholder="Ingresa tu apellido paterno"
+                  required
+                />
               </div>
             </div>
 
             <!-- Campo de apellido materno -->
             <div class="mb-6">
-              <label for="mother-last-name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Apellido materno*</label>
+              <label
+                for="mother-last-name"
+                class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Apellido materno*</label
+              >
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <i class="fa-solid fa-user text-gray-500 dark:text-gray-400"></i>
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                >
+                  <i
+                    class="fa-solid fa-user text-gray-500 dark:text-gray-400"
+                  ></i>
                 </div>
-                <input type="text" id="mother-last-name"
-                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
-                  placeholder="Ingresa tu apellido materno" required>
+                <input
+                  type="text"
+                  id="mother-last-name"
+                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-slate-700 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
+                  placeholder="Ingresa tu apellido materno"
+                  required
+                />
               </div>
             </div>
           </div>
@@ -62,40 +114,76 @@
           <div>
             <!-- Campo de correo electrónico -->
             <div class="mb-6">
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Correo electrónico*</label>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Correo electrónico*</label
+              >
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <i class="fa-solid fa-envelope text-gray-500 dark:text-gray-400"></i>
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                >
+                  <i
+                    class="fa-solid fa-envelope text-gray-500 dark:text-gray-400"
+                  ></i>
                 </div>
-                <input type="email" id="email"
-                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
-                  placeholder="correo@ejemplo.com" required>
+                <input
+                  type="email"
+                  id="email"
+                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-slate-700 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
+                  placeholder="correo@ejemplo.com"
+                  required
+                />
               </div>
             </div>
 
             <!-- Campo de contraseña -->
             <div class="mb-6">
-              <label for="password" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Contraseña*</label>
+              <label
+                for="password"
+                class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Contraseña*</label
+              >
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <i class="fa-solid fa-lock text-gray-500 dark:text-gray-400"></i>
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                >
+                  <i
+                    class="fa-solid fa-lock text-gray-500 dark:text-gray-400"
+                  ></i>
                 </div>
-                <input type="password" id="password"
-                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
-                  placeholder="Crea una contraseña" required>
+                <input
+                  type="password"
+                  id="password"
+                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-slate-700 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
+                  placeholder="Crea una contraseña"
+                  required
+                />
               </div>
             </div>
 
             <!-- Campo de confirmación de contraseña -->
             <div class="mb-6">
-              <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Confirmar contraseña*</label>
+              <label
+                for="confirm-password"
+                class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Confirmar contraseña*</label
+              >
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <i class="fa-solid fa-lock text-gray-500 dark:text-gray-400"></i>
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                >
+                  <i
+                    class="fa-solid fa-lock text-gray-500 dark:text-gray-400"
+                  ></i>
                 </div>
-                <input type="password" id="confirm-password"
-                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
-                  placeholder="Confirma tu contraseña" required>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  class="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-500 text-slate-700 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5"
+                  placeholder="Confirma tu contraseña"
+                  required
+                />
               </div>
             </div>
           </div>
@@ -104,16 +192,29 @@
         <!-- Términos y condiciones -->
         <div class="flex items-start mb-6">
           <div class="flex items-center h-5">
-            <input id="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-500 dark:focus:ring-primary" required>
+            <input
+              id="terms"
+              type="checkbox"
+              class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-500 dark:focus:ring-primary"
+              required
+            />
           </div>
-          <label for="terms" class="ms-2 text-sm text-gray-700 dark:text-gray-300">
-            Acepto los <a href="/terms" class="text-primary hover:text-blue-500">términos y condiciones</a>.
+          <label
+            for="terms"
+            class="ms-2 text-sm text-gray-700 dark:text-gray-300"
+          >
+            Acepto los
+            <a href="/terms" class="text-primary hover:text-primary-dark"
+              >términos y condiciones</a
+            >.
           </label>
         </div>
 
         <!-- Botón de Registrarse -->
-        <button type="submit"
-          class="w-full bg-primary text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-primary-light transition-all cursor-pointer">
+        <button
+          type="submit"
+          class="w-full bg-primary text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light transition-all cursor-pointer"
+        >
           Registrarse
         </button>
 
@@ -124,7 +225,11 @@
         <div class="text-center">
           <p class="text-sm text-gray-600 dark:text-gray-400">
             ¿Ya tienes una cuenta?
-            <a href="/auth/login" class="text-primary hover:text-blue-500 font-medium">Inicia sesión</a>
+            <a
+              href="/auth/login"
+              class="text-primary hover:text-primary-dark font-medium"
+              >Inicia sesión</a
+            >
           </p>
         </div>
       </form>

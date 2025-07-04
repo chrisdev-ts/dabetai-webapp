@@ -47,7 +47,7 @@ export class DatatableComponent implements AfterViewInit {
         <div id="dropdownMenu-${index}" class="z-10 hidden absolute right-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-44 dark:bg-gray-700">
           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
             <li><a href="#" data-action="preview" data-index="${index}" data-modal-target="read" data-modal-toggle="read" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-eye me-2"></i> Previsualizar</a></li>
-            <li><a href="#" data-action="edit" data-index="${index}" data-modal-target="create-update" data-modal-toggle="create-update" class="block px-4 py-2 text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-edit me-2"></i> Editar</a></li>
+            <li><a href="#" data-action="edit" data-index="${index}" data-modal-target="create-update" data-modal-toggle="create-update" class="block px-4 py-2 text-primary hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-edit me-2"></i> Editar</a></li>
             <li><a href="#" data-action="delete" data-index="${index}" data-modal-target="delete" data-modal-toggle="delete" class="block px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fas fa-trash me-2"></i> Eliminar</a></li>
           </ul>
         </div>
@@ -75,7 +75,7 @@ export class DatatableComponent implements AfterViewInit {
       // Crear el botón de "Crear"
       const createButton = document.createElement('button');
       createButton.className =
-        'me-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800';
+        'me-2 text-white bg-primary hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-primary-dark dark:focus:ring-primary';
       createButton.innerHTML = '<i class="fas fa-plus mr-2"></i> Agregar';
 
       // Agregar atributos para abrir el modal

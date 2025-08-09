@@ -1,54 +1,121 @@
-# Diabetes: Control de riesgos
 
-![Angular](https://img.shields.io/badge/Angular-v19-red)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-v5-lightblue)
+# dabetai WEB APP - Aplicación web para médicos y seguimiento de pacientes
 
-**Diabetes: Control de Riesgos mediante una Plataforma Inteligente de Monitorización y Predicción de Complicaciones con Inteligencia Artificial** o **Diabetes: Control de riesgos** es una aplicación web diseñada para el seguimiento y monitoreo de pacientes con diabetes, con el objetivo de predecir complicaciones derivadas de la enfermedad utilizando algoritmos de inteligencia artificial.
+Plataforma web para el monitoreo integral de pacientes con diabetes, que permite seguimiento, visualización y predicción de complicaciones mediante inteligencia artificial.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-19-red?logo=angular" alt="Angular version">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.x-blue?logo=tailwindcss" alt="Tailwind CSS version">
+  <img src="https://img.shields.io/badge/TypeScript-5.x-lightblue?logo=typescript" alt="TypeScript version">
+</p>
+
+## 📱 Capturas de pantalla
+
+<p align="center">
+  <img src="./assets/screenshots/login.png" alt="Pantalla de login" width="200"/>
+  <img src="./assets/screenshots/dashboard.png" alt="Dashboard principal" width="200"/>
+  <img src="./assets/screenshots/predictions.png" alt="Predicciones IA" width="200"/>
+  <img src="./assets/screenshots/chat.png" alt="Chat inteligente" width="200"/>
+</p>
+
+## 🩺 ¿Qué es dabetai WEB APP?
+
+**dabetai WEB APP** es la interfaz para médicos dentro de la plataforma dabetai, que permite:
+
+- Visualizar datos y métricas de pacientes con diabetes tipo 1
+- Monitoreo en tiempo real de glucosa, medicación y actividad física
+- Integración con modelos de IA para predicción de complicaciones diabéticas
+- Reportes gráficos e históricos para análisis clínico
 
 ---
 
-## Características principales
+## ✨ Funcionalidades principales
 
-- **Seguimiento de pacientes**: Registro y visualización de datos de pacientes, como niveles de glucosa, actividad física y medicamentos.
-- **Monitoreo en tiempo real**: Gráficos y alertas para el monitoreo continuo de la salud del paciente.
-- **Predicción de complicaciones**: Integración de modelos de inteligencia artificial para predecir riesgos y complicaciones derivadas de la diabetes.
-- **Interfaz moderna y responsiva**: Diseño atractivo y fácil de usar, desarrollado con Tailwind CSS.
+- Gestión y visualización completa de pacientes
+- Gráficos dinámicos de monitoreo glucémico y actividad
+- Alertas y notificaciones tempranas basadas en IA
+- Interfaz moderna y responsiva con Tailwind CSS
+- Seguridad básica para acceso controlado (login/logout)
 
 ---
 
-## Cómo configurar y ejecutar el proyecto
+## 🛠 Tecnologías
 
-### Requisitos previos
+- **Angular 19** - Framework frontend moderno y escalable
+- **TypeScript** - Código robusto y tipado estático
+- **Tailwind CSS 4.x** - Estilos CSS utilitarios para UI rápida y responsiva
+
+---
+
+## ⚡ Instalación rápida
+
+### Prerrequisitos
 
 - Node.js (v18 o superior)
 - Angular CLI (v19 o superior)
 - npm (v9 o superior)
 
-### Pasos para configurar el proyecto
+### Pasos
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/chrisdev-ts/diabetes-control-riesgos-web.git
-   cd diabetes-control-riesgos
-   ```
+1. **Clonar repositorio**
 
-2. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-3. Ejecuta el servidor de desarrollo:
-   ```bash
-   ng serve
-   ```
+```bash
+git clone https://github.com/chrisdev-ts/dabetai-webapp.git
+cd dabetai-webapp
+```
 
-4. Abre tu navegador y visita:
-   ```
-   http://localhost:4200
-   ```
+2. **Instalar dependencias**
+
+```bash
+npm install
+```
+
+3. **Ejecutar servidor de desarrollo**
+
+```bash
+ng serve
+```
+
+4. **Abrir en navegador**
+
+Visita `http://localhost:4200`
 
 ---
 
-## Licencia
+## 🏗 Ecosistema dabetai: nuestros repositorios
 
-Este proyecto está bajo la licencia **MIT**. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+dabetai está compuesto por múltiples repositorios especializados:
+
+| Repositorio                                                             | Propósito                   | Estado          |
+| ----------------------------------------------------------------------- | --------------------------- | --------------- |
+| **[dabetai-mobileapp](https://github.com/Fermin-Cardenas/dabetai-mobileapp)** | App para pacientes          | ✅ En desarrollo |
+| **[dabetai-webapp](https://github.com/chrisdev-ts/dabetai-webapp)**     | App web para médicos        | ✅ En desarrollo |
+| **[dabetai-aiapi](https://github.com/aleor25/dabetai-aiapi)**           | API de IA y predicciones    | ✅ En desarrollo |
+| **[dabetai-aimodels](https://github.com/chrisdev-ts/dabetai-aimodels)** | Modelos de machine learning | ✅ En desarrollo |
+| **[dabetai-landing](https://github.com/chrisdev-ts/dabetai-landing)**   | Página de aterrizaje        | ✅ En desarrollo |
+| **[dabetai-api](https://github.com/chrisdev-ts/dabetai-api)**                                                         | API principal del backend   | ✅ En desarrollo |
+
+---
+
+## 🤝 Colaboración interna
+
+Seguimos convenciones específicas para mantener consistencia - consulta [CONTRIBUTING.MD](CONTRIBUTING.MD).
+
+---
+
+## 🤝 Reconocimientos
+
+Este proyecto fue desarrollado por el equipo de autores:
+
+- Cardenas Cabal Fermín
+- Ortiz Pérez Alejandro
+- Serrano Puertos Jorge Christian
+
+Con la asesoría y guía conceptual de:
+
+- Guarneros Nolasco Luis Rolando
+- Cruz Ramos Nancy Aracely
+
+Y con el apoyo académico de la
+
+- Universidad Tecnológica del Centro de Veracruz
